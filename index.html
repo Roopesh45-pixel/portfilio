@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roopesh Kumar — Data Analyst</title>
+<title>Roopesh Kumar — Data Analyst & BI Analyst</title>
+<meta name="description" content="Roopesh Kumar — Data Analyst and BI Analyst portfolio featuring Power BI, SQL, Excel, Python, NHS operational analytics and forecasting projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -220,6 +221,57 @@
   .contact-panel h2{ font-size:34px; margin-bottom:14px; }
   .contact-panel p{ color:var(--muted); margin-bottom:32px; }
   .contact-links{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  .contact-form{
+    max-width:720px;
+    margin:32px auto 0;
+    text-align:left;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .form-field{ display:flex; flex-direction:column; gap:7px; }
+  .form-field.full{ grid-column:1 / -1; }
+  .form-field label{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .form-field input,
+  .form-field textarea{
+    width:100%;
+    background:var(--bg);
+    border:1px solid var(--line);
+    color:var(--text);
+    font:inherit;
+    border-radius:var(--radius);
+    padding:12px 14px;
+    outline:none;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .form-field textarea{ min-height:140px; resize:vertical; }
+  .form-field input:focus,
+  .form-field textarea:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(47,227,196,0.08);
+  }
+  .form-actions{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .form-note{
+    color:var(--muted);
+    font-size:12px;
+    max-width:52ch;
+  }
+  .honeypot{ display:none !important; }
+
   .footer-bottom{
     display:flex; justify-content:space-between; align-items:center; color:var(--muted-2);
     font-size:12.5px; font-family:var(--mono);
@@ -245,7 +297,16 @@
     .ed-grid{ grid-template-columns:1fr; }
     .cert-list{ grid-template-columns:1fr; }
     .contact-panel{ padding:36px 22px; }
+    .contact-form{ grid-template-columns:1fr; }
+    .form-field.full, .form-actions{ grid-column:1; }
     .section-head{ flex-direction:column; align-items:flex-start; }
+
+    /* Mobile reliability: never hide content behind scroll-reveal animation */
+    .reveal{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+    }
   }
 </style>
 </head>
@@ -261,7 +322,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
-    <a class="nav-cta" href="puligundlaroopesh17@gmail.com">Contact</a>
+    <a class="nav-cta" href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -273,11 +334,12 @@
       <div>
         <div class="eyebrow">Data Analyst · BI Analyst</div>
         <h1>Turning raw data<br>into <span class="accent">business decisions.</span></h1>
-        <div class="role">MSc Data Science &amp; Analytics — University of Hertfordshire</div>
-        <p class="lede">I build dashboards, forecasting models, and reporting pipelines that hold up under real questions — using Python, SQL, Power BI and Tableau. Open to Graduate &amp; Entry-Level Data / BI Analyst roles across the UK.</p>
+        <div class="role">Power BI · SQL · Python · Excel — MSc Data Science &amp; Analytics</div>
+        <p class="lede">I turn operational and analytical data into dashboards, KPIs and decision-ready insights using Power BI, SQL, Excel and Python. My portfolio also includes advanced forecasting and machine-learning work. Open to Graduate &amp; Entry-Level Data / BI Analyst roles across the UK.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">View projects</a>
           <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="https://github.com/Roopesh45-pixel/portfilio" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
@@ -291,15 +353,15 @@
             <span><span class="sw teal"></span>Hybrid ML Strategy</span>
             <span><span class="sw amber"></span>Buy &amp; Hold</span>
           </div>
-          <svg id="chart" viewBox="0 0 400 150" preserveAspectRatio="none" aria-label="Line chart showing a hybrid machine learning trading strategy outperforming a buy and hold benchmark, ending 24.7% ahead">
+          <svg id="chart" viewBox="0 0 400 150" preserveAspectRatio="none" aria-label="Line chart comparing a simulated hybrid machine learning strategy return of 24.7% with a Buy and Hold benchmark return of 15.3%">
             <path class="chart-path-bench" d="M0,120 L40,116 L80,112 L120,108 L160,104 L200,98 L240,92 L280,86 L320,80 L360,74 L400,70" />
             <path class="chart-path" id="mainPath" d="M0,124 L40,118 L80,108 L120,104 L160,86 L200,80 L240,60 L280,48 L320,36 L360,22 L400,10" />
           </svg>
         </div>
         <div class="kpirow">
-          <div class="kpi"><div class="num up">24.7%</div><div class="lbl">Simulated return</div></div>
-          <div class="kpi"><div class="num">5</div><div class="lbl">ML models compared</div></div>
-          <div class="kpi"><div class="num">26.9M+</div><div class="lbl">Records analysed</div></div>
+          <div class="kpi"><div class="num up">24.7%</div><div class="lbl">Simulated strategy return</div></div>
+          <div class="kpi"><div class="num">15.3%</div><div class="lbl">Buy &amp; Hold return</div></div>
+          <div class="kpi"><div class="num">26.9M+</div><div class="lbl">A&amp;E attendances covered</div></div>
         </div>
       </div>
     </div>
@@ -310,19 +372,19 @@
     <div class="wrap about-grid">
       <div class="reveal">
         <div class="eyebrow">About</div>
-        <h2 style="font-size:30px; font-weight:600; margin-bottom:20px;">From dissertation to dashboard.</h2>
-        <p>I'm an <strong>MSc Data Science &amp; Analytics graduate</strong> with a strong foundation in data analysis, business intelligence, and reporting. I enjoy taking messy, real-world data and turning it into something a stakeholder can actually act on.</p>
-        <p>My dissertation designed a <strong>hybrid stock price prediction system</strong>, combining ARIMA, LSTM, GRU, Random Forest and SVM models with a reinforcement-learning trading environment — built end-to-end from feature engineering through to a FastAPI backend and an interactive dashboard.</p>
-        <p>Outside of that, I've worked with NHS-scale datasets, built Power BI reports people can actually navigate, and I'm comfortable moving between the technical side (Python, SQL, ML) and the stakeholder-facing side (KPI reporting, dashboard storytelling).</p>
+        <h2 style="font-size:30px; font-weight:600; margin-bottom:20px;">Analysis built for decisions.</h2>
+        <p>I'm an <strong>MSc Data Science &amp; Analytics graduate</strong> focused on data analysis, business intelligence and reporting. I work across data cleaning, KPI design, visualisation and analytical storytelling to turn complex data into clear, decision-ready information.</p>
+        <p>My strongest BI project is an <strong>NHS A&amp;E performance dashboard</strong> built with Power BI, Power Query and DAX, covering demand, admissions and waiting-time indicators across NHS England regions.</p>
+        <p>I also bring advanced analytics experience from my MSc dissertation, where I compared forecasting and machine-learning models and built a simulated trading environment. That technical depth supports — rather than replaces — my core focus on practical Data and BI Analyst work.</p>
       </div>
       <div class="reveal">
         <div class="stack-list">
-          <div class="stack-row"><span class="k">Focus</span><span class="v">Data Analysis · BI · Forecasting</span></div>
-          <div class="stack-row"><span class="k">Languages</span><span class="v">Python, SQL</span></div>
-          <div class="stack-row"><span class="k">BI Tools</span><span class="v">Power BI, Tableau, Excel</span></div>
-          <div class="stack-row"><span class="k">ML / DS</span><span class="v">Pandas, NumPy, Scikit-learn, TensorFlow</span></div>
-          <div class="stack-row"><span class="k">Cloud</span><span class="v">Azure, AWS, Google Cloud Platform</span></div>
-          <div class="stack-row"><span class="k">Backend</span><span class="v">FastAPI, Git, MySQL, PostgreSQL</span></div>
+          <div class="stack-row"><span class="k">Focus</span><span class="v">Data Analysis · BI · KPI Reporting</span></div>
+          <div class="stack-row"><span class="k">Core Tools</span><span class="v">Power BI, SQL, Excel, Python</span></div>
+          <div class="stack-row"><span class="k">BI &amp; Reporting</span><span class="v">DAX, Power Query, Tableau</span></div>
+          <div class="stack-row"><span class="k">Data Tools</span><span class="v">Pandas, NumPy, MySQL, PostgreSQL</span></div>
+          <div class="stack-row"><span class="k">Advanced Analytics</span><span class="v">Scikit-learn, TensorFlow, Time Series</span></div>
+          <div class="stack-row"><span class="k">Additional Exposure</span><span class="v">FastAPI, Git, Azure, AWS, GCP</span></div>
           <div class="stack-row"><span class="k">Based in</span><span class="v">Hatfield, England, UK</span></div>
           <div class="stack-row"><span class="k">Looking for</span><span class="v">Graduate / Entry-Level UK roles</span></div>
         </div>
@@ -334,13 +396,13 @@
   <section id="experience">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Experience</h2>
-        <p>Consulting-style analysis and a full research-to-deployment dissertation project.</p>
+        <h2>Experience &amp; Applied Projects</h2>
+        <p>Applied analytics work across business reporting, dashboarding and advanced quantitative analysis.</p>
       </div>
       <div class="timeline reveal">
         <div class="tl-item">
           <div class="tl-date">March 2026 · 1 month · Remote</div>
-          <h3>Data Analytics Virtual Experience</h3>
+          <h3>Data Analytics Job Simulation</h3>
           <div class="tl-org">Deloitte Australia — via Forage</div>
           <ul>
             <li>Analysed structured business datasets to identify trends, patterns and performance issues</li>
@@ -351,12 +413,12 @@
         </div>
         <div class="tl-item">
           <div class="tl-date">Jan 2025 – May 2025 · Hatfield, UK</div>
-          <h3>Data Analytics Project — MSc Dissertation</h3>
+          <h3>Applied Analytics Project — MSc Dissertation</h3>
           <div class="tl-org">University of Hertfordshire</div>
           <ul>
             <li>Designed a hybrid stock price prediction system using ML and deep-learning models</li>
             <li>Engineered SMA, RSI and MACD indicators to improve forecasting accuracy</li>
-            <li>Built a reinforcement-learning trading environment in OpenAI Gym — 24.7% simulated return vs. Buy &amp; Hold</li>
+            <li>Built a reinforcement-learning trading environment in OpenAI Gym — 24.7% simulated strategy return vs. 15.3% Buy &amp; Hold</li>
             <li>Built REST APIs with FastAPI and an interactive dashboard for predictions and model outputs</li>
             <li>Evaluated models with RMSE, MSE and R², and presented findings to academic stakeholders</li>
           </ul>
@@ -370,18 +432,18 @@
     <div class="wrap">
       <div class="section-head reveal">
         <h2>Projects</h2>
-        <p>Two Power BI builds — one operational, one predictive.</p>
+        <p>Operational healthcare analytics and advanced predictive modelling, presented through decision-focused dashboards.</p>
       </div>
       <div class="proj-grid reveal">
         <div class="proj-card">
           <div class="proj-tag">Power BI · Power Query · DAX</div>
           <h3>NHS A&amp;E Demand &amp; Admissions Dashboard</h3>
           <ul>
-            <li>Analysed 26.9M+ A&amp;E attendances and 6.45M+ emergency admissions across NHS England regions</li>
+            <li>Analysed 2,000+ organisation-month records representing 26.9M+ A&amp;E attendances and 6.45M+ emergency admissions across NHS England regions</li>
             <li>Built Power Query (M) transformations to clean and reshape multi-year A&amp;E extracts</li>
             <li>Authored DAX measures: Admission Rate %, Over-4-Hour Wait Rate, Month-on-Month Attendance Change</li>
             <li>Designed a KPI-card layout with Year, Month, Region and Organisation slicers and a custom brand theme</li>
-            <li>Found NHS Midlands to be highest-demand and NHS South West the highest admission-rate region</li>
+            <li>Identified the Midlands as the highest-demand region and the South West as the highest admission-rate region, highlighting where capacity and admission-pressure monitoring should be prioritised</li>
           </ul>
           <div class="proj-metrics">
             <div><div class="n">23.9%</div><div class="l">Admission rate</div></div>
@@ -396,13 +458,13 @@
             <li>Visualised forecasts and performance from a hybrid ML / deep-learning prediction system</li>
             <li>Integrated ARIMA, LSTM, GRU, Random Forest and SVM outputs via a FastAPI backend into Power BI</li>
             <li>Built actual-vs-predicted price charts and SMA / RSI / MACD indicator views</li>
-            <li>Visualised reinforcement-learning trading results against a Buy &amp; Hold benchmark</li>
+            <li>Visualised a 24.7% simulated strategy return against a 15.3% Buy &amp; Hold benchmark, a +9.4 percentage-point difference in the test scenario</li>
             <li>Added ticker, date-range and model-type slicers for side-by-side comparison</li>
           </ul>
           <div class="proj-metrics">
-            <div><div class="n">+24.7%</div><div class="l">Vs. benchmark</div></div>
-            <div><div class="n">5</div><div class="l">Models compared</div></div>
-            <div><div class="n">3</div><div class="l">Indicators built</div></div>
+            <div><div class="n">+24.7%</div><div class="l">Simulated strategy return</div></div>
+            <div><div class="n">+15.3%</div><div class="l">Buy &amp; Hold return</div></div>
+            <div><div class="n">+9.4 pp</div><div class="l">Test-scenario difference</div></div>
           </div>
         </div>
       </div>
@@ -418,48 +480,43 @@
       </div>
       <div class="skills-grid reveal">
         <div class="skill-col">
-          <h3>Analysis &amp; BI</h3>
+          <h3>Core Analytics &amp; BI</h3>
           <div class="chip-list">
             <span class="chip">Data Analysis</span>
-            <span class="chip">Business Analysis</span>
             <span class="chip">KPI Reporting</span>
             <span class="chip">Data Visualisation</span>
             <span class="chip">Dashboard Development</span>
-            <span class="chip">Statistical Analysis</span>
             <span class="chip">Power BI</span>
-            <span class="chip">Tableau</span>
             <span class="chip">DAX</span>
             <span class="chip">Power Query</span>
             <span class="chip">Excel</span>
           </div>
         </div>
         <div class="skill-col">
-          <h3>Engineering &amp; ML</h3>
+          <h3>Data &amp; Programming</h3>
           <div class="chip-list">
             <span class="chip">Python</span>
             <span class="chip">SQL</span>
             <span class="chip">Pandas</span>
             <span class="chip">NumPy</span>
-            <span class="chip">Scikit-learn</span>
-            <span class="chip">TensorFlow</span>
-            <span class="chip">Machine Learning</span>
-            <span class="chip">FastAPI</span>
             <span class="chip">Git</span>
             <span class="chip">MySQL</span>
             <span class="chip">PostgreSQL</span>
           </div>
         </div>
         <div class="skill-col">
-          <h3>Platform &amp; Practice</h3>
+          <h3>Advanced &amp; Supporting</h3>
           <div class="chip-list">
-            <span class="chip">Azure</span>
-            <span class="chip">AWS</span>
-            <span class="chip">Google Cloud Platform</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Statistical Analysis</span>
+            <span class="chip">Scikit-learn</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">Machine Learning</span>
+            <span class="chip">FastAPI</span>
             <span class="chip">Data Cleaning</span>
             <span class="chip">Documentation</span>
-            <span class="chip">Analytical Skills</span>
-            <span class="chip">Critical Thinking</span>
             <span class="chip">Stakeholder Communication</span>
+            <span class="chip">Cloud Exposure: Azure · AWS · GCP</span>
           </div>
         </div>
       </div>
@@ -504,11 +561,51 @@
       <div class="contact-panel reveal">
         <div class="eyebrow" style="justify-content:center;">Contact</div>
         <h2>Let's talk data.</h2>
-        <p>Open to Graduate &amp; Entry-Level Data Analyst, BI Analyst and Business Analyst roles across the UK.</p>
-        <div class="contact-links">
-          <a class="btn btn-primary" href="mailto:puligundlaroopesh17@gmail.com">puligundlaroopesh17@gmail.com</a>
-          <a class="btn btn-ghost" href="tel:+447586237804">+44 7586 237804</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/puligundla-roopesh-kumar" target="_blank" rel="noopener">LinkedIn</a>
+        <p>Recruiting for a Data Analyst, BI Analyst or Business Analyst role? Send me a message below.</p>
+
+        <!--
+          PRIVACY-FRIENDLY CONTACT FORM
+          Create a free Formspree form and replace YOUR_FORM_ID below
+          with the ID from your Formspree endpoint.
+          Example: https://formspree.io/f/abcdwxyz
+        -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/mzebrayl"
+          method="POST"
+          id="portfolioContactForm"
+        >
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-field full">
+            <label for="contact-company">Company / Role <span style="text-transform:none;">(optional)</span></label>
+            <input id="contact-company" name="company_role" type="text" autocomplete="organization">
+          </div>
+
+          <div class="form-field full">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" required></textarea>
+          </div>
+
+          <!-- Honeypot spam protection -->
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+          <div class="form-actions">
+            <span class="form-note">Your contact details are used only so I can reply to your message.</span>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </div>
+        </form>
+
+        <div class="contact-links" style="margin-top:24px;">
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/puligundlaroopeshkumar-analyst" target="_blank" rel="noopener">Connect on LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom wrap" style="padding:0;">
@@ -521,12 +618,30 @@
 </main>
 
 <script>
-  // scroll reveal
+  // scroll reveal (desktop enhancement; mobile content stays visible)
   const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => io.observe(el));
+  if ('IntersectionObserver' in window && window.matchMedia('(min-width: 901px)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  // contact form setup guard
+  const contactForm = document.getElementById('portfolioContactForm');
+  if (contactForm && contactForm.action.includes('YOUR_FORM_ID')) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Contact form setup is not complete yet. Please connect via LinkedIn for now.');
+    });
+  }
 
   // animate chart draw-in
   const path = document.getElementById('mainPath');
